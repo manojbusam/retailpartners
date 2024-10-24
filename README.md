@@ -47,10 +47,10 @@ The API provides endpoints to retrieve detailed information about products, incl
 #### Example Endpoint:
 - **Get Specific Product Details**:
 
-`GET http://127.0.0.1:8000/api/products/?product_ids={productID}`
+`GET http://iContent.apple.com/api/products/?product_ids={productID}`
 - **Get Specific Products Details**:
 
-`GET http://127.0.0.1:8000/api/products/?product_ids={productID1,productID2..productIDn}`
+`GET http://iContent.apple.com/api/products/?product_ids={productID1,productID2..productIDn}`
 
 ---
 
