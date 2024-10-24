@@ -2,7 +2,6 @@ import mysql.connector
 from mysql.connector import errorcode
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -15,7 +14,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # Database configuration
 config = {
@@ -32,8 +30,6 @@ class Product(BaseModel):
     image_url: str
     video_url: str
     specs: str
-
-
 
 # Function to load sample products
 def load_sample_products():
@@ -63,6 +59,12 @@ def load_sample_products():
     try:
         conn = mysql.connector.connect(**config, database='apple_products')
         cursor = conn.cursor()
+
+        # Drop existing data from the products table
+        cursor.execute("DELETE FROM products;")  # This will remove all existing records
+
+        # Optionally, you can also truncate the table to reset auto-increment:
+        # cursor.execute("TRUNCATE TABLE products;")
 
         for product in sample_products:
             cursor.execute("""
