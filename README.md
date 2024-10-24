@@ -15,9 +15,13 @@ The iContent Product Data API provides a seamless way to access product informat
 - **Marketing Tools**: Use product data for promotional campaigns and analytics.
 
 ### Prerequisites for Integration
-- Basic understanding of RESTful APIs.
-- Familiarity with FastAPI and Python.
-- Access to a MySQL database.
+1. How REST Works: RESTful APIs utilize standard HTTP methods to perform operations on resources:
+- GET: Retrieve resource(s).
+- POST: Create a new resource.
+- PUT: Update an existing resource.
+- DELETE: Remove a resource.
+
+
 
 ---
 
