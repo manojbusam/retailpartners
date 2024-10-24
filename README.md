@@ -17,7 +17,8 @@ This project sets up a FastAPI application that interacts with a MySQL database 
    ```
    http://127.0.0.1:8000/api/products/{productID}
    ```
-or
+
+   or
 
    ```
    http://127.0.0.1:8000/api/products/11
