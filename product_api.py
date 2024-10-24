@@ -37,18 +37,21 @@ def load_sample_products():
     conn = None
     sample_products = [
         {
+            "id": 10,
             "name": "iPhone 14",
             "image_url": "https://example.com/images/iphone14.jpg",
             "video_url": "https://example.com/videos/iphone14.mp4",
             "specs": "6.1-inch display, A15 Bionic chip, Dual-camera system"
         },
         {
+            "id": 11,
             "name": "MacBook Air M2",
             "image_url": "https://example.com/images/macbookairm2.jpg",
             "video_url": "https://example.com/videos/macbookairm2.mp4",
             "specs": "13.3-inch Retina display, M2 chip, 18 hours battery life"
         },
         {
+            "id": 12,
             "name": "iPad Pro 11",
             "image_url": "https://example.com/images/ipadpro11.jpg",
             "video_url": "https://example.com/videos/ipadpro11.mp4",
@@ -63,14 +66,11 @@ def load_sample_products():
         # Drop existing data from the products table
         cursor.execute("DELETE FROM products;")  # This will remove all existing records
 
-        # Optionally, you can also truncate the table to reset auto-increment:
-        # cursor.execute("TRUNCATE TABLE products;")
-
         for product in sample_products:
             cursor.execute("""
-                INSERT INTO products (name, image_url, video_url, specs) 
-                VALUES (%s, %s, %s, %s)
-            """, (product['name'], product['image_url'], product['video_url'], product['specs']))
+                INSERT INTO products (id, name, image_url, video_url, specs) 
+                VALUES (%s, %s, %s, %s, %s)
+            """, (product['id'], product['name'], product['image_url'], product['video_url'], product['specs']))
 
         conn.commit()
     except mysql.connector.Error as err:
@@ -81,7 +81,7 @@ def load_sample_products():
         if conn is not None:
             conn.close()
 
-# API endpoint to get product data
+# API endpoint to get all product data
 @app.get("/api/products", response_model=list[Product])
 async def get_products():
     cursor = None
@@ -94,6 +94,30 @@ async def get_products():
         products = cursor.fetchall()
 
         return products  # FastAPI will automatically convert this to JSON response.
+    except mysql.connector.Error as err:
+        raise HTTPException(status_code=500, detail=str(err))
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if conn is not None:
+            conn.close()
+
+# API endpoint to get a specific product by ID
+@app.get("/api/products/{product_id}", response_model=Product)
+async def get_product(product_id: int):
+    cursor = None
+    conn = None
+    try:
+        conn = mysql.connector.connect(**config, database='apple_products')
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM products WHERE id = %s", (product_id,))
+        product = cursor.fetchone()
+
+        if product is None:
+            raise HTTPException(status_code=404, detail="Product not found")
+
+        return product  # FastAPI will automatically convert this to JSON response.
     except mysql.connector.Error as err:
         raise HTTPException(status_code=500, detail=str(err))
     finally:

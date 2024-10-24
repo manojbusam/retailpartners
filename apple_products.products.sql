@@ -6,7 +6,7 @@ USE apple_products;
 
 -- Create the products table if it doesn't exist
 CREATE TABLE IF NOT EXISTS products (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY,  -- Remove AUTO_INCREMENT
     name VARCHAR(255) NOT NULL,
     image_url VARCHAR(255),
     video_url VARCHAR(255),
