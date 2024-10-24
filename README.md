@@ -47,10 +47,10 @@ The API provides endpoints to retrieve detailed information about products, incl
 #### Example Endpoint:
 - **Get Specific Product Details**:
 
-`GET http://iContent.apple.com/api/products/?product_ids={productID}`
+`GET https://iContent.apple.com/api/products/?product_ids={productID}`
 - **Get Specific Products Details**:
 
-`GET http://iContent.apple.com/api/products/?product_ids={productID1,productID2..productIDn}`
+`GET https://iContent.apple.com/api/products/?product_ids={productID1,productID2..productIDn}`
 
 ---
 
@@ -60,7 +60,7 @@ The API provides endpoints to retrieve detailed information about products, incl
 The API uses JSON format for both requests and responses.
 
 #### Sample Request:
-```http
+```
 GET api/products/?product_ids=10 HTTP/1.1
 Host: localhost
 ```
