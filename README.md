@@ -45,7 +45,8 @@ GRANT ALL PRIVILEGES ON apple_products.* TO 'wedding_app'@'localhost';
 -- Flush privileges to ensure that they are applied
 FLUSH PRIVILEGES;
 ```
-![Screenshot 2024-10-24 at 4 58 15 PM](https://github.com/user-attachments/assets/3b98c989-d888-415b-bb58-a2aaf737e461)
+![Screenshot 2024-10-24 at 4 59 12 PM](https://github.com/user-attachments/assets/4a4d6060-615b-4f16-a46e-6a51bba87ea1)
+
 
 ## Notes
 
