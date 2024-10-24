@@ -2,6 +2,9 @@
 
 This project sets up a FastAPI application that interacts with a MySQL database to manage product data.
 
+![Screenshot 2024-10-24 at 5 18 40 PM](https://github.com/user-attachments/assets/c812f00c-8afc-4444-aee3-7276f5530fe4)
+
+
 ## Setup Instructions
 
 1. **Execute the Setup Script**:
@@ -62,12 +65,3 @@ SELECT * FROM apple_products.products;
 
 - Ensure that your MySQL server is running before executing the setup script.
 - Modify any necessary configurations in your FastAPI application as needed.
-
-
-### Summary
-
-- The `README.md` includes instructions for executing the `setup.sh` script and accessing the API.
-- It also contains SQL commands for manually creating the database and table, along with granting privileges.
-- Make sure to save this content in a file named `README.md` in your project directory.
-
-Feel free to ask if you need any more modifications or additional information!
