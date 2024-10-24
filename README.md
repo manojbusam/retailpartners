@@ -1,6 +1,6 @@
 # iContent Product Data API
 
-This project sets up a iContent API that Reads a Apple database to GET product data using FastAPI.
+This project sets up a iContent API that Reads a Apple database to GET Product(s) details using FastAPI.
 
 ![Screenshot 2024-10-24 at 5 23 03 PM](https://github.com/user-attachments/assets/48b9be32-88c4-4405-80cc-95ad22d6e654)
 
@@ -45,9 +45,8 @@ The API provides endpoints to retrieve detailed information about products, incl
 - Specifications
 
 #### Example Endpoint:
-- **Get All Products**: `GET http://127.0.0.1:8000/api/products`
-- **Get Specific Product**: `GET http://127.0.0.1:8000/api/products/{productID}`
-- **Get Specific Products**:: `GET http://127.0.0.1:8000/api/products/{productID1,productID2...productIDn}`
+- **Get Specific Product Details**: `GET http://127.0.0.1:8000/api/products/{productID}`
+- **Get Specific Products Details**:: `GET http://127.0.0.1:8000/api/products/{productID1,productID2...productIDn}`
 
 ---
 
