@@ -1,75 +1,60 @@
-# Product API with SQLite
+# iContent Product Data API
 
-This project demonstrates how to create a simple SQLite database, load sample product data, and query it using a Python script.
-
-## Prerequisites
-
-- Python 3.x installed on your Mac. You can download it from [python.org](https://www.python.org/downloads/).
+This project sets up a FastAPI application that interacts with a MySQL database to manage product data.
 
 ## Setup Instructions
 
-Follow these steps to set up the project:
+1. **Execute the Setup Script**:
+   To create the database and load sample data into it, run the following command in your terminal:
 
-### 1. Clone the Repository
+   ```bash
+   ./setup.sh
+   ```
 
-If you haven't already, clone this repository or create a new directory for your project:
+2. **Access the API**:
+   After running the setup script, you can view the product data by navigating to:
 
-```bash
-mkdir product_api
-cd product_api
+   ```
+   http://127.0.0.1:8000/api/products
+   ```
+
+## SQL Commands
+
+If you need to manually create the database and table, you can use the following SQL commands. These commands are available in the `apple_product.product.sql` file:
+
+```sql
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS apple_products;
+
+-- Use the newly created database
+USE apple_products;
+
+-- Create the products table if it doesn't exist
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    image_url VARCHAR(255),
+    video_url VARCHAR(255),
+    specs TEXT
+);
+
+-- Grant privileges to the wedding_app user on the apple_products database
+GRANT ALL PRIVILEGES ON apple_products.* TO 'wedding_app'@'localhost';
+
+-- Flush privileges to ensure that they are applied
+FLUSH PRIVILEGES;
 ```
 
-### 2. Create a Virtual Environment
+## Notes
 
-Create a virtual environment to manage your project's dependencies:
-
-```bash
-python3 -m venv venv
+- Ensure that your MySQL server is running before executing the setup script.
+- Modify any necessary configurations in your FastAPI application as needed.
 ```
 
-### 3. Activate the Virtual Environment
+### Summary
 
-Activate the virtual environment:
+- The `README.md` includes instructions for executing the `setup.sh` script and accessing the API.
+- It also contains SQL commands for manually creating the database and table, along with granting privileges.
+- Make sure to save this content in a file named `README.md` in your project directory.
 
-```bash
-source venv/bin/activate
-```
-
-### 4. Create `requirements.txt`
-
-Create a file named `requirements.txt` with the following content:
-
-```
-sqlite3
-```
-
-Note: The `sqlite3` module is included in Python's standard library, so you typically don't need to install it separately.
-
-### 5. Create the Python Script
-
-Create a file named `product_api.py` with the following content:
-
-### 6. Run the Script
-
-Make sure your virtual environment is activated, then run the script:
-
-```bash
-python product_api.py
-```
-
-### 7. Deactivate the Virtual Environment
-
-When you're done, you can deactivate the virtual environment by running:
-
-```bash
-deactivate
-```
-
-## Conclusion
-
-You have successfully set up a simple SQLite database and queried it using Python! Feel free to modify the sample data or expand upon this project as needed.
-```
-
-### Instructions Summary:
-- This `README.md` provides clear instructions for setting up a virtual environment, creating necessary files, and running the SQLite script.
-- You can save this content in a file named `README.md` in your project directory for easy reference.
+Feel free to ask if you need any more modifications or additional information!
