@@ -61,19 +61,19 @@ The API uses JSON format for both requests and responses.
 
 #### Sample Request:
 ```http
-GET /api/products/1 HTTP/1.1
+GET api/products/?product_ids=10 HTTP/1.1
 Host: 127.0.0.1:8000
 ```
 
 #### Sample Response:
 ```json
-{
-    "id": 1,
+  {
+    "id": 10,
     "name": "iPhone 14",
     "image_url": "https://example.com/images/iphone14.jpg",
     "video_url": "https://example.com/videos/iphone14.mp4",
     "specs": "6.1-inch display, A15 Bionic chip, Dual-camera system"
-}
+  }
 ```
 
 ---
