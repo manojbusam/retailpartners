@@ -1,1 +1,4 @@
-sqlite3
+mysql-connector-python
+flask
+fastapi
+uvicorn
