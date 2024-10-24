@@ -15,7 +15,7 @@ The iContent Product Data API provides a seamless way to access product informat
 - **Marketing Tools**: Use product data for promotional campaigns and analytics.
 
 ### Prerequisites for Integration
-1. How REST Works: RESTful APIs utilize standard HTTP methods to perform operations on resources:
+How REST Works: RESTful APIs utilize standard HTTP methods to perform operations on resources:
 - GET: Retrieve resource(s).
 - POST: Create a new resource.
 - PUT: Update an existing resource.
