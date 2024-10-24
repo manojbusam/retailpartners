@@ -1,8 +1,8 @@
 import mysql.connector
-from mysql.connector import errorcode
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List
 
 app = FastAPI()
 
@@ -31,7 +31,7 @@ class Product(BaseModel):
     video_url: str
     specs: str
 
-# Function to load sample products
+# Function to load sample products (remains unchanged)
 def load_sample_products():
     cursor = None
     conn = None
@@ -81,45 +81,36 @@ def load_sample_products():
         if conn is not None:
             conn.close()
 
-# API endpoint to get all product data
-@app.get("/api/products", response_model=list[Product])
-async def get_products():
+# New API endpoint to get multiple products by IDs
+@app.get("/api/products/", response_model=List[Product])
+async def get_multiple_products(product_ids: str):
+    ids = [int(id) for id in product_ids.split(",")]
+
     cursor = None
     conn = None
+    
     try:
         conn = mysql.connector.connect(**config, database='apple_products')
         cursor = conn.cursor(dictionary=True)
 
-        cursor.execute("SELECT * FROM products")
+        # Create a placeholder string for the SQL query
+        placeholders = ', '.join(['%s'] * len(ids))
+        
+        # Fetch multiple products based on IDs
+        query = f"SELECT * FROM products WHERE id IN ({placeholders})"
+        
+        cursor.execute(query, ids)
+        
         products = cursor.fetchall()
+        
+        if not products:
+            raise HTTPException(status_code=404, detail="No products found for the given IDs")
 
         return products  # FastAPI will automatically convert this to JSON response.
+    
     except mysql.connector.Error as err:
         raise HTTPException(status_code=500, detail=str(err))
-    finally:
-        if cursor is not None:
-            cursor.close()
-        if conn is not None:
-            conn.close()
-
-# API endpoint to get a specific product by ID
-@app.get("/api/products/{product_id}", response_model=Product)
-async def get_product(product_id: int):
-    cursor = None
-    conn = None
-    try:
-        conn = mysql.connector.connect(**config, database='apple_products')
-        cursor = conn.cursor(dictionary=True)
-
-        cursor.execute("SELECT * FROM products WHERE id = %s", (product_id,))
-        product = cursor.fetchone()
-
-        if product is None:
-            raise HTTPException(status_code=404, detail="Product not found")
-
-        return product  # FastAPI will automatically convert this to JSON response.
-    except mysql.connector.Error as err:
-        raise HTTPException(status_code=500, detail=str(err))
+    
     finally:
         if cursor is not None:
             cursor.close()
