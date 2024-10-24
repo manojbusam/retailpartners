@@ -1,6 +1,3 @@
-Here's a `README.md` file formatted to guide you through setting up a Python virtual environment, installing dependencies, and running the SQLite database script.
-
-```markdown
 # Product API with SQLite
 
 This project demonstrates how to create a simple SQLite database, load sample product data, and query it using a Python script.
