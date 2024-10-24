@@ -17,6 +17,7 @@ This project sets up a FastAPI application that interacts with a MySQL database 
    ```
    http://127.0.0.1:8000/api/products
    ```
+![Screenshot 2024-10-24 at 4 58 15 PM](https://github.com/user-attachments/assets/794e6052-1952-4c78-a96e-3f66ba8dcdca)
 
 ## SQL Commands
 
@@ -44,6 +45,7 @@ GRANT ALL PRIVILEGES ON apple_products.* TO 'wedding_app'@'localhost';
 -- Flush privileges to ensure that they are applied
 FLUSH PRIVILEGES;
 ```
+![Screenshot 2024-10-24 at 4 58 15 PM](https://github.com/user-attachments/assets/3b98c989-d888-415b-bb58-a2aaf737e461)
 
 ## Notes
 
