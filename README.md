@@ -12,12 +12,12 @@ This project sets up a FastAPI application that interacts with a MySQL database 
    ```
 
 2. **Access the API**:
-   After running the setup script, you can view the product data by navigating to:
+   After running the setup script, you can view the product data(PDP Details) by navigating to:
 
    ```
-   http://127.0.0.1:8000/api/products
+   http://127.0.0.1:8000/api/products/{productID}
    ```
-![Screenshot 2024-10-24 at 5 11 01 PM](https://github.com/user-attachments/assets/4fea7189-ad5c-4609-9913-c248b576469c)
+or
 
    ```
    http://127.0.0.1:8000/api/products/11
