@@ -62,7 +62,7 @@ The API uses JSON format for both requests and responses.
 #### Sample Request:
 ```http
 GET api/products/?product_ids=10 HTTP/1.1
-Host: 127.0.0.1:8000
+Host: localhost
 ```
 
 #### Sample Response:
