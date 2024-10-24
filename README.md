@@ -45,8 +45,10 @@ The API provides endpoints to retrieve detailed information about products, incl
 - Specifications
 
 #### Example Endpoint:
-- **Get Specific Product Details**: `GET http://127.0.0.1:8000/api/products/?product_ids={productID}`
-- **Get Specific Products Details**:: `GET http://127.0.0.1:8000/api/products/?product_ids={productID1,productID2...productID3}`
+- **Get Specific Product Details**:
+  `GET http://127.0.0.1:8000/api/products/?product_ids={productID}`
+- **Get Specific Products Details**:
+  `GET http://127.0.0.1:8000/api/products/?product_ids={productID1,productID2...productID3}`
 
 ---
 
