@@ -1,6 +1,6 @@
 # iContent Product Data API
 
-This project sets up a FastAPI application that interacts with a MySQL database to manage product data.
+This project sets up a iContent API that Reads a Apple database to GET product data using FastAPI.
 
 ![Screenshot 2024-10-24 at 5 23 03 PM](https://github.com/user-attachments/assets/48b9be32-88c4-4405-80cc-95ad22d6e654)
 
