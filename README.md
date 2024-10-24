@@ -17,7 +17,13 @@ This project sets up a FastAPI application that interacts with a MySQL database 
    ```
    http://127.0.0.1:8000/api/products
    ```
-![Screenshot 2024-10-24 at 4 58 15 PM](https://github.com/user-attachments/assets/794e6052-1952-4c78-a96e-3f66ba8dcdca)
+![Screenshot 2024-10-24 at 5 11 01 PM](https://github.com/user-attachments/assets/4fea7189-ad5c-4609-9913-c248b576469c)
+
+   ```
+   http://127.0.0.1:8000/api/products/11
+   ```
+![Screenshot 2024-10-24 at 5 10 43 PM](https://github.com/user-attachments/assets/e551a2ca-d787-44c9-96cb-b387cd807e3b)
+
 
 ## SQL Commands
 
