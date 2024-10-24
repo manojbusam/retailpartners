@@ -22,7 +22,7 @@ or
    ```
    http://127.0.0.1:8000/api/products/11
    ```
-![Screenshot 2024-10-24 at 5 10 43 PM](https://github.com/user-attachments/assets/e551a2ca-d787-44c9-96cb-b387cd807e3b)
+   ![Screenshot 2024-10-24 at 5 10 43 PM](https://github.com/user-attachments/assets/e551a2ca-d787-44c9-96cb-b387cd807e3b)
 
 
 ## SQL Commands
@@ -50,8 +50,11 @@ GRANT ALL PRIVILEGES ON apple_products.* TO 'wedding_app'@'localhost';
 
 -- Flush privileges to ensure that they are applied
 FLUSH PRIVILEGES;
+
+SELECT * FROM apple_products.products;
 ```
-![Screenshot 2024-10-24 at 4 59 12 PM](https://github.com/user-attachments/assets/4a4d6060-615b-4f16-a46e-6a51bba87ea1)
+![Screenshot 2024-10-24 at 5 13 49 PM](https://github.com/user-attachments/assets/ecabcc25-ec77-4237-a57e-10c0ab805235)
+
 
 
 ## Notes
