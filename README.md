@@ -2,7 +2,7 @@
 
 This project sets up a FastAPI application that interacts with a MySQL database to manage product data.
 
-![Screenshot 2024-10-24 at 5 18 40 PM](https://github.com/user-attachments/assets/c812f00c-8afc-4444-aee3-7276f5530fe4)
+![Screenshot 2024-10-24 at 5 23 03 PM](https://github.com/user-attachments/assets/48b9be32-88c4-4405-80cc-95ad22d6e654)
 
 
 ## Setup Instructions
