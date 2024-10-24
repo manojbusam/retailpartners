@@ -49,7 +49,7 @@ FLUSH PRIVILEGES;
 
 - Ensure that your MySQL server is running before executing the setup script.
 - Modify any necessary configurations in your FastAPI application as needed.
-```
+
 
 ### Summary
 
