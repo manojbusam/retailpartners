@@ -10,9 +10,8 @@ This project sets up a iContent API that Reads a Apple database to GET Product(s
 The iContent Product Data API provides a seamless way to access product information from an Apple database. This API is designed for developers looking to integrate product data into their applications, enabling them to retrieve images, videos, specifications, and marketing content efficiently.
 
 ### Overview and Use Cases
-- **E-commerce Platforms**: Integrate product details directly into online stores.
-- **Mobile Applications**: Fetch and display product information dynamically.
-- **Marketing Tools**: Use product data for promotional campaigns and analytics.
+- **E-commerce Platforms**: Integrate product details directly into online stores, eCommerce website and Mobile App.
+- **Marketing Tools**: Use product data for promotional campaigns(E-Mails and Website Banners).
 
 ### Prerequisites for Integration
 How REST Works: RESTful APIs utilize standard HTTP methods to perform operations on resources:
