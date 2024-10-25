@@ -59,13 +59,13 @@ The API provides endpoints to retrieve detailed information about products, incl
 ### JSON Payloads
 The API uses JSON format for both requests and responses.
 
-#### Sample Request 1:
+#### Single Product Request:
 ```
 GET api/products/?product_ids=10 HTTP/1.1
 Host: localhost
 ```
 
-#### Sample Response 1:
+#### Single Product Response:
 ```json
   {
     "id": 10,
@@ -75,13 +75,13 @@ Host: localhost
     "specs": "6.1-inch display, A15 Bionic chip, Dual-camera system"
   }
 ```
-#### Sample Request 2:
+#### Mutli-Product Request:
 ```
 GET api/products/?product_ids=10,11 HTTP/1.1
 Host: localhost
 ```
 
-#### Sample Response 2:
+#### Multi-Product Response:
 ```json
   {
     "id": 10,
