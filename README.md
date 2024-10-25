@@ -45,10 +45,10 @@ The API provides endpoints to retrieve detailed information about products, incl
 - Specifications
 
 #### Example Endpoint:
-- **Get Specific Product Details**:
+- **Get Single Product Details**:
 
 `GET https://iContent.apple.com/v1/api/products/?product_ids={productID}`
-- **Get Specific Products Details**:
+- **Get Multi-Products Details**:
 
 `GET https://iContent.apple.com/v1/api/products/?product_ids={productID1,productID2..productIDn}`
 
