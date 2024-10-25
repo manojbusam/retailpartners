@@ -59,13 +59,13 @@ The API provides endpoints to retrieve detailed information about products, incl
 ### JSON Payloads
 The API uses JSON format for both requests and responses.
 
-#### Sample Request:
+#### Sample Request 1:
 ```
 GET api/products/?product_ids=10 HTTP/1.1
 Host: localhost
 ```
 
-#### Sample Response:
+#### Sample Response 1:
 ```json
   {
     "id": 10,
@@ -73,6 +73,29 @@ Host: localhost
     "image_url": "https://example.com/images/iphone14.jpg",
     "video_url": "https://example.com/videos/iphone14.mp4",
     "specs": "6.1-inch display, A15 Bionic chip, Dual-camera system"
+  }
+```
+#### Sample Request 2:
+```
+GET api/products/?product_ids=10,11 HTTP/1.1
+Host: localhost
+```
+
+#### Sample Response 2:
+```json
+  {
+    "id": 10,
+    "name": "iPhone 14",
+    "image_url": "https://example.com/images/iphone14.jpg",
+    "video_url": "https://example.com/videos/iphone14.mp4",
+    "specs": "6.1-inch display, A15 Bionic chip, Dual-camera system"
+  },
+  {
+    "id": 11,
+    "name": "MacBook Air M2",
+    "image_url": "https://example.com/images/macbookairm2.jpg",
+    "video_url": "https://example.com/videos/macbookairm2.mp4",
+    "specs": "13.3-inch Retina display, M2 chip, 18 hours battery life"
   }
 ```
 
