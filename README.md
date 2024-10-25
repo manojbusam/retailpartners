@@ -47,10 +47,10 @@ The API provides endpoints to retrieve detailed information about products, incl
 #### Example Endpoint:
 - **Get Specific Product Details**:
 
-`GET https://iContent.apple.com/api/products/?product_ids={productID}`
+`GET https://iContent.apple.com/v1/api/products/?product_ids={productID}`
 - **Get Specific Products Details**:
 
-`GET https://iContent.apple.com/api/products/?product_ids={productID1,productID2..productIDn}`
+`GET https://iContent.apple.com/v1/api/products/?product_ids={productID1,productID2..productIDn}`
 
 ---
 
@@ -116,7 +116,7 @@ Refer to the documentation for detailed error messages and troubleshooting steps
 ### API Versioning Strategy
 To maintain backward compatibility, the API will use versioning in the URL:
 ```
-http://127.0.0.1:8000/v1/api/products
+https://iContent.apple.com/v1/api/products
 ```
 This allows developers to adapt to changes without breaking existing implementations.
 
